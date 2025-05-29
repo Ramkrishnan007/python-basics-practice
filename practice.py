@@ -1,3 +1,4 @@
+import math  # math module for advanced math functions
 course = "Ramkrishnan"
 print(len(course))  # length of the string
 print(course[-1])
@@ -10,7 +11,7 @@ print(Name_user)
 
 var1 = input("Enter your firstname: ")
 var2 = input("Enter your lastname: ")
-var = f"{var1} {var2}"# name with a space using f-string
+var = f"{var1} {var2}"  # name with a space using f-string
 print(var)
 var3 = f"{len(var1)} {2+2}"
 print(var3)  # length of first name and a simple calculation
@@ -19,9 +20,9 @@ print(var3)  # length of first name and a simple calculation
 MyName = "  ramkrishnan"
 print(MyName.upper())  # convert to uppercase
 print(MyName.lower())  # convert to lowercase
-print(MyName) # original string remains unchanged
-print(MyName.title()) # convert to title case
-print (MyName.strip())  # remove leading and trailing spaces
+print(MyName)  # original string remains unchanged
+print(MyName.title())  # convert to title case
+print(MyName.strip())  # remove leading and trailing spaces
 print(MyName.find("k"))  # find the index of 'k'
 print(MyName.replace("ram", "R"))  # replace 'Ram' with 'R'
 print("ram" in MyName)  # check if 'ram' is in the string
@@ -36,19 +37,18 @@ print(10-8)
 print(10*8)
 print(10/3)  # division
 print(10//3)  # floor division
-print(10%3)  # modulus
+print(10 % 3)  # modulus
 print(10**3)  # exponentiation
 
 x = 10
 x = x + 5  # increment x by 5
-x +=5 # another way to increment x by 5
+x += 5  # another way to increment x by 5
 
 # Working with numbers
 
-print (round(3.14159))  # round to 2 decimal places
-print (abs(-2.8)) # absolute value
-import math # math module for advanced math functions
-print (math.ceil(2.2))  # round up to the nearest integer
+print(round(3.14159))  # round to 2 decimal places
+print(abs(-2.8))  # absolute value
+print(math.ceil(2.2))  # round up to the nearest integer
 
 # type conversion
 
@@ -59,11 +59,13 @@ print(type(input_String))  # this will show that input is a string
 # To fix the error, we need to convert the input string to an integer
 output_int = int(input_String) + 1  # convert string to integer
 print(output_int)  # now this will work correctly
-print(f"input_String is: {input_String}, and its type is: {output_int} and its type is: {type(output_int)}")
+print(
+    f"input_String is: {input_String}, and its type is: {output_int} and its type is: {type(output_int)}")
 
 # falsy
 # falsy values in Python
-falsy_values = [0, 0.0, "", None, [], {}, set(),1, "False", "0", True, "1", "Hello", " ", "0.0"]
+falsy_values = [0, 0.0, "", None, [], {},
+                set(), 1, "False", "0", True, "1", "Hello", " ", "0.0"]
 for value in falsy_values:
     if not value:  # checks if the value is falsy
         print(f"{value} is falsy")
@@ -72,7 +74,7 @@ for value in falsy_values:
 # This will print whether each value is falsy or truthy
 # Note: In Python, empty strings, zero values, None, empty collections (like lists, sets, and dictionaries) are considered falsy.
 
-#comparison operators
+# comparison operators
 # Comparison operators in Python
 comparison_operators = [
     (5, 3, "=="),  # equal to
@@ -150,12 +152,14 @@ def check_age(age):
 
 # for loop
 for number in range(3):
-    print("Message", number+1)  # This will print "Message 1", "Message 2", "Message 3"
+    # This will print "Message 1", "Message 2", "Message 3"
+    print("Message", number+1)
 
-for number in range (1, 4):
-    print("Message", number)  # This will print "Message 1", "Message 2", "Message 3"
-    
-#for else
+for number in range(1, 4):
+    # This will print "Message 1", "Message 2", "Message 3"
+    print("Message", number)
+
+# for else
 success = True  # Example condition
 for number in range(3):
     print("Message")
@@ -167,14 +171,15 @@ else:
 
 # nested for loop
 
-for i in range (5):
+for i in range(5):
     for j in range(7):
-        print(f"Outer loop {i}, Inner loop {j}")  # This will print combinations of outer and inner loop indices   
-        
+        # This will print combinations of outer and inner loop indices
+        print(f"Outer loop {i}, Inner loop {j}")
+
 # Iterables
 
-print(type(10)) # int
-print(type(range(10))) # range object
+print(type(10))  # int
+print(type(range(10)))  # range object
 
 for x in range(10):
     print(x)  # This will print numbers from 0 to 9
@@ -184,26 +189,27 @@ for char in "Hello":
     print(char)  # This will print each character in the string "Hello"
 
 
-for x in [1,2,3,4]:
-    print(x) # This will print each element in the list [1, 2, 3, 4]
+for x in [1, 2, 3, 4]:
+    print(x)  # This will print each element in the list [1, 2, 3, 4]
 
 # while loop
 
-num = 100 
+num = 100
 
-while num >0 :
+while num > 0:
     print(num)
-    num //=2 # This will print the value of num and then divide it by 2 until num is less than or equal to 0
+    num //= 2  # This will print the value of num and then divide it by 2 until num is less than or equal to 0
 
 command = ""
 while command.lower() != "quit":
     command = input(">")
-    print("ECHO", command)  # This will print the command entered by the user until "quit" is entered
+    # This will print the command entered by the user until "quit" is entered
+    print("ECHO", command)
 
 # task-1
 
 number = int(input("Enter a number: "))
-if number % 2 ==0:
+if number % 2 == 0:
     print(f"{number} is an even number")
 else:
     print(f"{number} is an odd number")
@@ -212,84 +218,120 @@ else:
 n = int(input("Enter a number of elements in the array:"))
 even_count = 0
 odd_count = 0
-for i in range (n):
-    num = int (input(f"Enter element {i+1}: "))
-    if i % 2 ==0:
-        even_count +=1
+for i in range(n):
+    num = int(input(f"Enter element {i+1}: "))
+    if i % 2 == 0:
+        even_count += 1
     else:
-        odd_count +=1
+        odd_count += 1
 print(f"Number of even indexed elements: {even_count}")
 print(f"Number of odd indexed elements: {odd_count}")
 # This will count the number of even and odd indexed elements in the array
 
 # functions
 
+
 def greet():
-    print("Hello, welcome to the Python course!")  # This function prints a greeting message
-    print("This is a simple function without parameters or return value")  # Additional message  
+    # This function prints a greeting message
+    print("Hello, welcome to the Python course!")
+    # Additional message
+    print("This is a simple function without parameters or return value")
+
+
 greet()  # Calling the greet function to execute its code
 
 # arguments and parameters
 
-def greet(first_name,last_name):
-    print(f"Hello, {first_name} {last_name}! Welcome to the Python course!")  # This function prints a greeting message with first and last name
-    print("This function takes two parameters: first_name and last_name")  # Additional message
 
-first_name = input("Enter your first name: ")  # Taking first name input from the user
-last_name = input("Enter your last name: ")  # Taking last name input from the user
-greet(first_name, last_name)  # Calling the greet function with user inputs as arguments
+def greet(first_name, last_name):
+    # This function prints a greeting message with first and last name
+    print(f"Hello, {first_name} {last_name}! Welcome to the Python course!")
+    # Additional message
+    print("This function takes two parameters: first_name and last_name")
 
-#types of functions 
 
-#1- perform a task
+# Taking first name input from the user
+first_name = input("Enter your first name: ")
+# Taking last name input from the user
+last_name = input("Enter your last name: ")
+# Calling the greet function with user inputs as arguments
+greet(first_name, last_name)
+
+# types of functions
+
+# 1- perform a task
+
+
 def greet_user(name):
-    print(f"Hello, {name}! Welcome to the Python course!")  # This function prints a greeting message with the user's name
-#2- return a value
+    # This function prints a greeting message with the user's name
+    print(f"Hello, {name}! Welcome to the Python course!")
+# 2- return a value
+
+
 def add_numbers(a, b):
     return a + b  # This function takes two numbers as parameters and returns their sum
-#3- perform a task and return a value
+# 3- perform a task and return a value
+
+
 def calculate_area(length, width):
     area = length * width  # This function calculates the area of a rectangle
-    print(f"The area of the rectangle is: {area}")  # Prints the calculated area
+    # Prints the calculated area
+    print(f"The area of the rectangle is: {area}")
     return area  # Returns the area value
 
-def great (name):
-    print(f"Hello, {name}! Welcome to the Python course!")  # This function prints a greeting message with the user's name
 
-print(great("Ramkrishnan"))  
+def great(name):
+    # This function prints a greeting message with the user's name
+    print(f"Hello, {name}! Welcome to the Python course!")
+
+
+print(great("Ramkrishnan"))
 # This will print "Hello, Ramkrishnan! Welcome to the Python course!" and return None since the function does not have a return statement because it is a void function
 
 # keyword arguments
 
+
 def increment(number, by):
-    return number + by  # This function increments the number by the specified value (default is 1)
+    # This function increments the number by the specified value (default is 1)
+    return number + by
+
 
 # incremented_value = increment(10, by=5)  # Calling the function with keyword argument 'by'
 # print(incremented_value)  # This will print the incremented value, which is 15 in this case
 print(increment(10, by=5))  # This will print the incremented value, which is 15 in this case same as above but without storing in a variable and printing it directly simply with keyword argument
 
 # Default arguments
+
+
 def increment(number, by=1):
-        return number + by  # This function increments the number by the specified value (default is 1)
-print(increment(10))  # Calling the function with default argument, this will print 11
-print(increment(10, by=5))  # Calling the function with keyword argument 'by', this will print 15
+    # This function increments the number by the specified value (default is 1)
+    return number + by
 
 
-#args,wait,what
+# Calling the function with default argument, this will print 11
+print(increment(10))
+# Calling the function with keyword argument 'by', this will print 15
+print(increment(10, by=5))
+
+
+# args,wait,what
 
 def multiply(*numbers):
-    total  = 1  # Initialize total to 1 for multiplication
+    total = 1  # Initialize total to 1 for multiplication
     for number in numbers:
         total *= number  # Multiply each number with the total
     return total  # Return the final product
+
+
 # Example usage
-numbers = [2, 3, 4]  # List of numbers to multiply  
+numbers = [2, 3, 4]  # List of numbers to multiply
 for number in numbers:
     print(number)
 
 result = multiply(*numbers)  # Unpacking the list into the function
-print(f"The product of {numbers} is: {result}")  # This will print the product of the numbers in the list
+# This will print the product of the numbers in the list
+print(f"The product of {numbers} is: {result}")
 # This will print "The product of [2, 3, 4] is: 24"
 # This function takes a variable number of arguments and multiplies them together
-#end of the code
+# end of the code
 # Note: The * operator is used to unpack the list into individual arguments for the function
